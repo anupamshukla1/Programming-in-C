@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+#include<stdio.h>
+#include<strings.h>
+int main()
+{
+    char str[1000],a[10]={'0','1','2','3','4','5','6','7','8','9'};
+    int count,i,j,freq[10];
+    scanf("%[^\n]",str);
+    for(i=0;i<10;i++)
+    {
+        count=0;
+        for(j=0;j<strlen(str);j++)
+        {
+            if(str[j]==a[i])
+              count++;
+        }
+        freq[i]=count;
+
+    }
+    for(i=0;i<10;i++)
+        printf("%d ",freq[i]);
+    return 0;
+}
