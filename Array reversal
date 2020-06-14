@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, *arr, i;
+    scanf("%d", &num);
+    arr = (int*) malloc(num * sizeof(int));  // Allocating memory to array dynamically 
+    for(i = 0; i < num; i++) {
+        scanf("%d", arr + i);
+    }
+    int temp;
+    for(i=0;i<num/2;i++){      /* logic to reverse the array */
+        temp=*(arr+num-i-1);
+        
+        *(arr+num-i-1)=*(arr+i);
+        *(arr+i)=temp;
+    }
+
+    for(i = 0; i < num; i++)
+        printf("%d ", *(arr + i));
+    return 0;
+}
